@@ -65,19 +65,26 @@ In this example, the user has chosen to group the app into an `admin` folder, a 
 Getting Started
 -------------
 
-Prerequisites: Node, Grunt, Yeoman, and Bower.  Once Node is installed, do:
+Prerequisites: Node, Grunt, Yeoman, and Bower. Once Node is installed, clone this repo and do:
 
     npm install -g grunt-cli yo bower
 
-Next, install this generator:
+Next, as this generator only resides locally on your computer you need to create a symbolic link that generator will use (in order run yo ts-angular in the terminal).
+From the root of your generator project (in generator-ts-angular/ folder) run:
 
-    npm install -g generator-ts-angular
+    npm link
 
 To create a project:
 
     mkdir MyNewAwesomeApp
     cd MyNewAwesomeApp
     yo ts-angular
+
+
+Gulp Tasks
+-------------
+
+    gulp        #This will initiate the default gulp task which in turn will start a browser-sync instance and watch .html, .less and .js files for changes and reload the browser.
 
 Grunt Tasks
 -------------
