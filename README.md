@@ -65,9 +65,9 @@ In this example, the user has chosen to group the app into an `admin` folder, a 
 Getting Started
 -------------
 
-Prerequisites: Node, Grunt, Yeoman, and Bower. Once Node is installed, clone this repo and do:
+Prerequisites: Node, Grunt, Gulp, Yeoman, and Bower. Once Node is installed, clone this repo and do:
 
-    npm install -g grunt-cli yo bower
+    npm install -g gulp grunt-cli yo bower
 
 Next, as this generator only resides locally on your computer you need to create a symbolic link that generator will use (in order run yo ts-angular in the terminal).
 From the root of your generator project (in generator-ts-angular/ folder) run:
