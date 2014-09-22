@@ -1,4 +1,5 @@
 #generator-ts-angular
+A fork of [generator-cg-angular](https://github.com/cgross/generator-cg-angular)
 
 >Yeoman Generator for Enterprise Angular Projects
 
