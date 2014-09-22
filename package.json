@@ -1,7 +1,7 @@
 {
   "name": "generator-ts-angular",
-  "version": "0.0.1",
-  "description": "Yeoman Generator for SEB FX Angular projects, based on generator-cg-angular 3.1.2.",
+  "version": "0.0.2",
+  "description": "Yeoman Generator for Enterprise projects, based on generator-cg-angular 3.1.2.",
   "keywords": [
     "yeoman-generator",
     "angular"
