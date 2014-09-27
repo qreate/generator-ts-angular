@@ -2,7 +2,7 @@
 
 >Yeoman Generator for Enterprise Angular Projects
 
-This generator follows the [Angular Best Practice Guidelines for Project Structure](http://blog.angularjs.org/2014/02/an-angularjs-style-guide-and-best.html).
+This generator follows the [Angular Best Practice Guidelines for Project Structure](http://blog.angularjs.org/2014/02/an-angularjs-style-guide-and-best.html) and is a fork of [generator-cg-angular](https://github.com/cgross/generator-cg-angular)
 
 Features
 
