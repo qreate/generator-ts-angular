@@ -42,6 +42,26 @@ module.exports = function (grunt) {
                 options: {
                     port: 9001
                 }
+            },
+            docs: {
+                options: {
+                    port: 3000,
+                    base: './docs',
+                    keepalive: true,
+                    open: {
+                        target: 'http://localhost:3000/#/api'
+                    }
+                }
+            },
+            app: {
+                options: {
+                    port: 5000,
+                    base: './',
+                    keepalive: false,
+                    open: {
+                        target: 'http://localhost:5000/#/'
+                    }
+                }
             }
         },
         watch: {
@@ -69,6 +89,9 @@ module.exports = function (grunt) {
             },
             after: {
                 src:['temp']
+            },
+            docs:{
+                src:['docs/partials']
             }
         },
         less: {
@@ -191,7 +214,8 @@ module.exports = function (grunt) {
             during_watch: {
                 browsers: ['PhantomJS']
             },
-        },protractor: {
+        },
+        protractor: {
             options: {
                 configFile: "node_modules/protractor/referenceConf.js", // Default config file
                 keepAlive: true, // If false, the grunt process stops when the test fails.
@@ -207,13 +231,47 @@ module.exports = function (grunt) {
                 }
             },
         },
+        ngdocs: {
+            options: {
+                dest: 'docs',
+                html5Mode: false,
+                startPage: '#/api',
+                title:'My App',
+                titleLink: "#/api",
+                bestMatch: false,
+                editExample:false
+                //,
+                //analytics: {
+                //    account: 'UA-01234567-0',
+                //    domainName: 'my-domain.com'
+                //},
+                //discussions: {
+                //    shortName: 'discus-short-name',
+                //    url: 'http://127.0.0.1:8282/',
+                //    dev: false
+                //}
+            },
+            api: {
+                src: ['directive/**/*.js', '!directive/**/*.spec.js',
+                    'service/**/*.js', '!service/**/*.spec.js',
+                    'filter/**/*.js', '!filter/**/*.spec.js',
+                    'module/**/*.js', '!module/**/*.spec.js',
+                    'app.js'
+                ],
+                title: 'API Documentation'
+            }
+        }
     });
 
+    grunt.registerTask('docs', ['clean:docs', 'ngdocs']);
+    grunt.registerTask('serve-docs', 'connect:docs');
     grunt.registerTask('build',['jshint','clean:before','less','dom_munger','ngtemplates','cssmin','concat','ngmin','uglify','copy','htmlmin','imagemin','clean:after']);
     grunt.registerTask('serve', ['dom_munger:read','jshint','connect', 'watch']);
     grunt.registerTask('test',['dom_munger:read','karma:all_tests']);
+    grunt.registerTask('e2e-test',['connect:app','protractor']);
 
     grunt.loadNpmTasks('grunt-protractor-runner');
+    grunt.loadNpmTasks('grunt-ngdocs');
 
     grunt.event.on('watch', function(action, filepath) {
         //https://github.com/gruntjs/grunt-contrib-watch/issues/156

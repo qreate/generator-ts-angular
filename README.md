@@ -89,11 +89,13 @@ Gulp Tasks
 Grunt Tasks
 -------------
 
-Now that the project is created, you have 3 simple Grunt commands available:
+Now that the project is created, you have 6 simple Grunt commands available:
 
-    grunt serve         #This will run a development server with watch & livereload enabled.
+    grunt serve         #This will run a development server with watch & livereload enabled (use Gulp task instead!).
     grunt test          #Run local unit tests.
-    grunt protractor    #Run protractor E2E tests.
+    grunt e2e-test      #Run protractor E2E tests.
+    grunt docs          #Create documentation usin ngdocs
+    grunt serve-docs    #View documentation
     grunt build         #Places a fully optimized (minified, concatenated, and more) in /dist
 
 When `grunt serve` is running, any changed javascript files will be linted using JSHint as well as have their appropriate unit tests executed.  Only the unit tests that correspond to the changed file will be run.  This allows for an efficient test driven workflow.
@@ -162,6 +164,7 @@ Importantly, grunt-dom-munger uses CSS attribute selectors to manage the parsing
 
 Release History
 -------------
+* 27/9/2014 - v0.0.3 Fork - Angular 1.3, added Protractor and Karma test, ngdocs, browser-sync and some other things.
 * 7/6/2014 - v3.1.2 - Fix for directive template URLs with backslashes on Windows.
 * 6/10/2014 - v3.1.1 - Fix for backslashes being used in injected routes/tags on subgenerators.
 * 5/1/2014 - v3.1.0 - New subgenerators for modules and modals.  Replaced grunt-contrib-jasmine with grunt-karma.  Karma allows us to test against actual browsers other than PhantomJS.

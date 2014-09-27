@@ -1,7 +1,7 @@
 {
   "name": "generator-ts-angular",
-  "version": "0.0.1",
-  "description": "Yeoman Generator for SEB FX Angular projects, based on generator-cg-angular 3.1.2.",
+  "version": "0.0.3",
+  "description": "Yeoman Generator for larger enterprise Angular projects, based on generator-cg-angular 3.1.2.",
   "keywords": [
     "yeoman-generator",
     "angular"
@@ -18,7 +18,8 @@
   },
   "devDependencies": {
     "mocha": "~1.10.0",
-    "gulp": "^3.8.8"
+    "gulp": "^3.8.8",
+    "grunt": "^0.4.5"
   },
   "engines": {
     "node": ">=0.8.0"

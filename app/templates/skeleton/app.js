@@ -1,3 +1,12 @@
+/**
+ * @ngdoc interface
+ * @name <%= _.camelize(appname) %>
+ * @module <%= _.camelize(appname) %>
+ * @description
+ *
+ * # <%= appname %> (core module)
+ * The <%= appname %> module is loaded by default.
+ */
 angular.module('<%= _.camelize(appname) %>', ['ui.bootstrap','ui.utils','<%= routerModuleName %>','ngAnimate']);
 <% if (!uirouter) { %>
 angular.module('<%= _.camelize(appname) %>').config(function($routeProvider) {
